@@ -38,5 +38,6 @@ jobs:
           context: .
           push: true
           no-cache: true # just here temporarily for debugging a thing
-          tags: latest
+          #tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           labels: ${{ steps.meta.outputs.labels }}
