@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/pytas
+  IMAGE_NAME: ${{ github.repository_owner }}/PyTAS
 
 jobs:
   build-and-push-image:
@@ -39,5 +39,5 @@ jobs:
           push: true
           no-cache: true # just here temporarily for debugging a thing
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ghcr.io/arian04/pytas:latest
           labels: ${{ steps.meta.outputs.labels }}
