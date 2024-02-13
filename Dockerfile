@@ -43,6 +43,12 @@ FROM $BASE_IMAGE:$BASE_IMAGE_TAG
 
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1
 
+# runtime dependencies (figured this out by running it and adding a package every time it said there was a .so file missing)
+RUN apt-get update -y && \
+	apt-get -y --no-install-recommends install libgtk-3-0 libxxf86vm1 libnotify4 libxtst6 libsdl2-2.0-0 libgl1 libegl1 && \
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/*
+
 # install wheel files
 WORKDIR /build
 COPY --from=builder_wheels /build /build
