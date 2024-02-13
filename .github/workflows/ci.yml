@@ -37,7 +37,7 @@ jobs:
         with:
           context: .
           push: true
-          no-cache: true # just here temporarily for debugging a thing
           #tags: ${{ steps.meta.outputs.tags }}
-          tags: ghcr.io/arian04/pytas:latest
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
           labels: ${{ steps.meta.outputs.labels }}
