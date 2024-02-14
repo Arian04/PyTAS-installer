@@ -1,5 +1,6 @@
 ARG BASE_IMAGE=python
 ARG BASE_IMAGE_TAG=3.9.18-bullseye
+#ARG BASE_IMAGE_TAG=3.9-bookworm # TODO: update base image to newer debian
 
 ##### Build Wheels #####
 FROM $BASE_IMAGE:$BASE_IMAGE_TAG as builder_wheels
