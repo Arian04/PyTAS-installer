@@ -1,5 +1,3 @@
-# Run PyTAS easily
-
 ## What is PyTAS?
 Information about PyTAS can be found here: http://self-assembly.net/wiki/index.php/PyTAS
 
